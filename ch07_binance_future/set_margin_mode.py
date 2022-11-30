@@ -15,9 +15,6 @@ exchange = ccxt.binance(config={
     }
 })
 
-symbol = "XRP/BUSD"
-#orders = exchange.fetch_open_orders(symbol)
-#pprint.pprint(orders)
-
-resp = exchange.cancel_order(id="2427047015", symbol=symbol)
+exchange.load_markets()
+resp = exchange.set_margin_mode(marginMode='cross', symbol='XRP/USDT')
 pprint.pprint(resp)

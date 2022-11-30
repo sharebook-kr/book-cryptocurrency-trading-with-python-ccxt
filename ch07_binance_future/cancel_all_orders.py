@@ -16,8 +16,5 @@ exchange = ccxt.binance(config={
 })
 
 symbol = "XRP/BUSD"
-#orders = exchange.fetch_open_orders(symbol)
-#pprint.pprint(orders)
-
-resp = exchange.cancel_order(id="2427047015", symbol=symbol)
+resp = exchange.cancel_all_orders(symbol=symbol)
 pprint.pprint(resp)
